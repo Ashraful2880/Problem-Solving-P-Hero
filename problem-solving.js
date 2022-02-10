@@ -6,7 +6,7 @@ const task=([
 
 
 function cardDistribution(val) {
-    const random=00000;
+    const random="00000";
     const res= val.map((i,index)=>{
         const district=i.district.slice(0,2).toUpperCase();
         const year=i.currentYear.toString().slice(2,4);
