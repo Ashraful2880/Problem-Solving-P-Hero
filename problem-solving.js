@@ -6,10 +6,7 @@ const task=([
 
 
 function cardDistribution(val) {
-    const length=val.length;
-    const random="00000";
-    const numbers= new Array(length).fill(1).map( (_, i) => i+1 )
-
+    const random=00000;
     const res= val.map((i,index)=>{
         const district=i.district.slice(0,2).toUpperCase();
         const year=i.currentYear.toString().slice(2,4);
@@ -21,15 +18,19 @@ function cardDistribution(val) {
         return result;
     })
     const final=res.map(item=>{
-        const str=item.slice(0,2);
         const number=parseInt(item.slice(2,16));
         const obg={cardNumber:item,gift:"",pririoty:""};
         if(number%2==0){
             obg.gift="R"
+            obg.pririoty=1
         }else{
             obg.gift="W"
+            obg.pririoty=2
         }
-        console.log(obg);
+        return obg;
     });
+    const last = final.sort((a, b) => a.pririoty - b.pririoty);
+    return last;
 }
-cardDistribution(task);
+const ff= cardDistribution(task);
+console.log(ff);
