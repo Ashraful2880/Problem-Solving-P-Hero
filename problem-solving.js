@@ -18,11 +18,11 @@ function cardDistribution(val) {
         const birthDate=element.birthYear;
         const digits= numbers.map(number=> random+number)
         const output=district+post+birthDate+year+digits;
-        const result=output.splice(0,1);
+        const result=output.slice(0,16);
         // const numbers=[...Array(2).keys()]
         
 
-        console.log(result);
+        console.log( result);
     }
 }
 cardDistribution(task);
